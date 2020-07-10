@@ -47,7 +47,53 @@ var Data = [
       },
 
     ]
-  }]
+  },
+  {
+    title:"Local Disk D:",
+    children: [
+      {
+        title: " Files",
+        children: [
+          
+            {
+                title:"A"
+             },
+            {
+              title: "B",
+             },
+            {
+              title: "C",
+              
+            }    
+        ]
+      },
+      {
+        title: "Users",
+        children: [
+          {
+            title: "Nishant",
+          },
+          {
+            title: "Siddharth",
+            
+          }
+        ]
+      },
+      {
+        title: "Windows",
+        children: [
+          {
+            title: "Boot",
+          },
+          {
+            title: "File Manager",
+          },
+        ]
+      },
+
+    ]
+  }
+]
   
 
 
@@ -55,44 +101,7 @@ var Data = [
 
 class App extends React.Component {
   
-  state={
-    full:[
-      {
-        title: "Top level 1",
-        slug: "top-level-1",
-        is_directory:false,
-        is_expanded:false,
-        children: [
-          {
-            title: "Sub level 1",
-            slug: "sub-level-1",
-            is_directory:false,
-            is_expanded:false,
-            children: [
-              {
-                title: "Sub Sub Level 1",
-                slug: "sub-sub-level-1",
-                is_directory:false,
-                is_expanded:false,
-              }
-            ]
-          },
-          {
-            title: "Sub level 2",
-            slug: "sub-level-2",
-            is_directory:false,
-            is_expanded:false,
-          }
-        ]
-      },
-      {
-        title: "Top level 2",
-        slug: "top-level 2",
-        is_directory:false,
-        is_expanded:false,
-      }
-    ]
-  }
+  
  
   // toggle=(data)=>{
   //   // console.log(data)
