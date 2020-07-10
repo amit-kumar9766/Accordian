@@ -1,62 +1,57 @@
-// import React, { useState } from 'react';
+
 import React,{Component} from 'react';
-// import Header from './Header';
 import MyComponent from "./MyComponent.js";
 
 var Data = [
   {
-    title: "Top level 1",
-    slug: "top-level-1",
-    is_directory:false,
-    is_expanded:false,
+    title:"Local Disk C:",
     children: [
       {
-        title: "Sub level 1",
-        slug: "sub-level-1",
-        is_directory:false,
-        is_expanded:false,
+        title: "Program Files",
+        children: [
+          
+            {
+                title:"File 1"
+             },
+            {
+              title: "File 2",
+             },
+            {
+              title: "File 3",
+              
+            }    
+        ]
+      },
+      {
+        title: "Users",
         children: [
           {
-            title: "Sub Sub Level 1",
-            slug: "sub-sub-level-1",
-            is_directory:false,
-            is_expanded:false,
+            title: "Nishant",
+          },
+          {
+            title: "Siddharth",
+            
           }
         ]
       },
       {
-        title: "Sub level 2",
-        slug: "sub-level-2",
-        is_directory:false,
-        is_expanded:false,
-      }
-    ]
-  },
-  {
-    title: "Top level 2",
-    slug: "top-level 2",
-    is_directory:false,
-    is_expanded:false,
-  }
-]
+        title: "Windows",
+        children: [
+          {
+            title: "Boot",
+          },
+          {
+            title: "File Manager",
+          },
+        ]
+      },
 
-// const MyComponent  = (props) => {
-//      if(Array.isArray(props.collection)) {
-//          return <ul>
-//                {props.collection.map((data)=> {
-//                    return <li>
-//                       <ul>
-//                         <li>{data.title}</li>
-//                         <li>{data.slug}</li>
-//                         <li><MyComponent collection={data.children}/></li>
-//                       </ul>
-//                    </li>
-//                })
-//                }
-//          </ul>
-//      }
-//      return null;
-// }
+    ]
+  }]
+  
+
+
+
 
 class App extends React.Component {
   
@@ -99,31 +94,30 @@ class App extends React.Component {
     ]
   }
  
-  toggle=(data)=>{
-    // console.log(data)
-    var A=this.state.full
-    A.map((x)=> {
-      if  (x===data){
-        x.is_expanded=!x.is_expanded
-      }
+  // toggle=(data)=>{
+  //   // console.log(data)
+  //   var A=this.state.full
+  //   A.map((x)=> {
+  //     if  (x===data){
+  //       x.is_expanded=!x.is_expanded
+  //     }
    
-      // if  (x.children.length>0 && x===data){
-      //   x.children.is_expanded=!x.is_expanded
-      // }
-      // if  (x.children.children!=undefined && x===data){
-      //   x.children.children.is_expanded=!x.is_expanded
-      // }
-    })
-  this.setState({
-    full:A
-  })
-  }
+      
+  //   })
+  // this.setState({
+  //   full:A
+  // })
+  // }
 
 
     render() {
+     
         return (
-           <MyComponent collection={this.state.full} toggleAcc={(data)=>this.toggle(data)}/>
+          
+           <MyComponent collection={Data} />
+          
         )
+   
     }
 }
 
